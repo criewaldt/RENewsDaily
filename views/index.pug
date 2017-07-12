@@ -5,8 +5,26 @@ html(lang='en')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         meta(name='description', content='Real Estate News')
         meta(name='author', content='Chris Riewaldt')
-        link(rel='shortcut icon', href='ico/favicon.png')
-        title RENews - Get real estate news sent daily to your inbox
+        
+        title R.E. News Daily - Real estate news sent to your inbox daily
+        
+        link(rel='apple-touch-icon', sizes='57x57', href='icon/apple-icon-57x57.png')
+        link(rel='apple-touch-icon', sizes='60x60', href='icon/apple-icon-60x60.png')
+        link(rel='apple-touch-icon', sizes='72x72', href='icon/apple-icon-72x72.png')
+        link(rel='apple-touch-icon', sizes='76x76', href='icon/apple-icon-76x76.png')
+        link(rel='apple-touch-icon', sizes='114x114', href='icon/apple-icon-114x114.png')
+        link(rel='apple-touch-icon', sizes='120x120', href='icon/apple-icon-120x120.png')
+        link(rel='apple-touch-icon', sizes='144x144', href='icon/apple-icon-144x144.png')
+        link(rel='apple-touch-icon', sizes='152x152', href='icon/apple-icon-152x152.png')
+        link(rel='apple-touch-icon', sizes='180x180', href='icon/apple-icon-180x180.png')
+        link(rel='icon', type='image/png', sizes='192x192', href='icon/android-icon-192x192.png')
+        link(rel='icon', type='image/png', sizes='32x32', href='icon/favicon-32x32.png')
+        link(rel='icon', type='image/png', sizes='96x96', href='icon/favicon-96x96.png')
+        link(rel='icon', type='image/png', sizes='16x16', href='icon/favicon-16x16.png')
+        link(rel='manifest', href='/manifest.json')
+        meta(name='msapplication-TileColor', content='#ffffff')
+        meta(name='msapplication-TileImage', content='/ms-icon-144x144.png')
+        meta(name='theme-color', content='#ffffff')
         
         // Bootstrap core CSS
         link(href='css/bootstrap.css', rel='stylesheet')
@@ -69,15 +87,13 @@ html(lang='en')
                         span.icon-bar
                         span.icon-bar
                     a.navbar-brand(href='/')
-                        b Real Estate News
+                        b R.E. News Daily
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li.active
                             a.smothscroll(href='#home') News Sources
                         li
                             a.smothscroll(href="" data-toggle="modal" data-target="#myModal") Subscribe
-                        li
-                            a.smothscroll(href='#help') Contact Us
                             
                             
                 // /.nav-collapse
@@ -87,8 +103,8 @@ html(lang='en')
                 .row.centered
                     .col-lg-12
                         h1
-                            | RE News
-                        h3 News and information for real estate brokers, landlords, investers, and anyone else
+                            | R.E. News Daily
+                        h3 Daily news for real estate brokers, landlords, investers, and anyone else
                         br
                         br
                         br
@@ -99,26 +115,25 @@ html(lang='en')
             // INTRO WRAP
             #intro
                 .container
-                    h1.centered News Sources
-                    h3.centered We collect news articles from these sources:
+                    h1.centered We collect relevant news articles from these sources:
                     br
                     .well
                         .row.centered
                             .col-sm-3
                                 h3
-                                    strong New York Times - Real Estate
+                                    strong New York Times
                             .col-sm-3
                                 h3
-                                    strong The Real Deal - New York
+                                    strong The Real Deal
                             .col-sm-3
                                 h3
-                                    strong Curbed - New York
+                                    strong Curbed NY
                             .col-sm-3
                                 h3
                                     strong Crain's New York - Business
                             .col-sm-3
                                 h3
-                                    strong DNAinfo.com - Real Estate
+                                    strong DNAinfo.com
                             .col-sm-3
                                 h3
                                     strong Real Estate Weekly
@@ -129,8 +144,7 @@ html(lang='en')
                                 h3
                                     strong Inman - Real Estate 
                     .row.centered
-                        h1.centered How does it work? 
-                        h3.centered Subscribe and we'll send real estate news to your inbox daily.
+                        h1.centered Subscribe and we'll send real estate news to your inbox daily.
                         br
                         div.btn.btn-primary.btn-lg(data-toggle="modal" data-target="#myModal") Subscribe
                         br
@@ -143,31 +157,37 @@ html(lang='en')
         
         // Modal
         #myModal.modal.fade(role='dialog')
+            
             .modal-dialog
                 // Modal content
-                .modal-content
-                    .modal-header
-                        button.close(type='button', data-dismiss='modal') ×
-                        h4.modal-title Subscribe to Real Estate News
-                    .modal-body
-                        form
+                form(id="subscribe" method="POST" action="/subscribe")
+                    .modal-content
+                    
+                        .modal-header
+                            button.close(type='button', data-dismiss='modal') ×
+                            h4.modal-title Subscribe to Real Estate News
+                        .modal-body
+                        
                             .form-group
                                 label(for='exampleInputEmail1') Enter Your Email Address
                                 br
                                 br
-                                input#exampleInputEmail1.form-control(type='email', aria-describedby='email', placeholder='someone@somewhere.com')
+                                input.form-control(name='email', type='email', aria-describedby='email', placeholder='someone@somewhere.com')
                                 br
                                 strong.small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
-    
-                    .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Close
-                        button.btn.btn-success(type='button', data-dismiss='modal') Subscribe
+        
+                        .modal-footer
+                            button.btn.btn-default(type='button', data-dismiss='modal') Close
+                            button.btn.btn-success(type='button', data-dismiss='modal' onclick="form_submit()") Subscribe
                         
         style.
             .tooltip {
             border-bottom: 0px;
             }
-        
+        script(type='text/javascript').
+            function form_submit() {
+            document.getElementById("subscribe").submit();
+            }
 
 
 
@@ -178,8 +198,8 @@ html(lang='en')
             #showcase
                 .container.text-center
                     .col-lg-12
-                        h1.centered Have a suggested news source you don't see here? Contact Chris at 
-                            a(href="mailto:criewaldt@gmail.com?Subject=RENews%20Suggestion") criewaldt@gmail.com 
+                        h1.centered Have a suggested news source you don't see here? Have a suggestion on how to make this better? Contact us at 
+                            a(href="http://ChrisRiewaldt.com") ChrisRiewaldt.com
                     br
                 // /container
                 
