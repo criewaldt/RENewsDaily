@@ -1,0 +1,38 @@
+{
+  "name": "ICanHasHelp",
+  "version": "1.0.0",
+  "description": "Find out if you're eligible for help from various programs and sources.",
+  "main": " app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/criewaldt/icanhashelp.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "SocketIO",
+    "Postgres",
+    "Redis",
+    "Pug",
+    "Heroku",
+    "Heroku-Redis"
+  ],
+  "author": "Chris Riewaldt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/criewaldt/icanhashelp/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "aws-sdk": "^2.82.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "nodemailer": "^4.0.1",
+    "pug": "^2.0.0-rc.2",
+    "request": "^2.81.0",
+    "sequelize": "^4.2.1"
+  }
+}

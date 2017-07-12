@@ -1,0 +1,205 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='Real Estate News')
+        meta(name='author', content='Chris Riewaldt')
+        link(rel='shortcut icon', href='ico/favicon.png')
+        title RENews - Get real estate news sent daily to your inbox
+        
+        // Bootstrap core CSS
+        link(href='css/bootstrap.css', rel='stylesheet')
+        // Custom styles for this template
+        link(href='css/main.css', rel='stylesheet')
+        link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic', rel='stylesheet', type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Raleway:400,300,700', rel='stylesheet', type='text/css')
+        script(src='js/jquery.min.js')
+        script(src='js/smoothscroll.js')
+        
+        //main
+        script(src='js/main.js')
+        
+        //bootstrap select
+        // Latest compiled and minified CSS
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css')
+        // Latest compiled and minified JavaScript
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js')
+        // (Optional) Latest compiled and minified JavaScript translation files
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js')
+        
+        style.
+            .hover {
+                background-color: blue;
+            }
+        
+        style.
+            /* Tooltip container */
+            .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+            }
+            /* Tooltip text */
+            .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+            }
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tooltip:hover .tooltiptext {
+            visibility: visible;
+            }
+        
+        
+    body(data-spy='scroll', data-offset='0', data-target='#navigation')
+        // Fixed navbar
+        #navigation.navbar.navbar-default.navbar-fixed-top
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/')
+                        b Real Estate News
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li.active
+                            a.smothscroll(href='#home') News Sources
+                        li
+                            a.smothscroll(href="" data-toggle="modal" data-target="#myModal") Subscribe
+                        li
+                            a.smothscroll(href='#help') Contact Us
+                            
+                            
+                // /.nav-collapse
+        section#home(name='home')
+        #headerwrap
+            .container
+                .row.centered
+                    .col-lg-12
+                        h1
+                            | RE News
+                        h3 News and information for real estate brokers, landlords, investers, and anyone else
+                        br
+                        br
+                        br
+                        br
+            // / .container
+        // / #headerwrap
+        section#desc(name='desc')
+            // INTRO WRAP
+            #intro
+                .container
+                    h1.centered News Sources
+                    h3.centered We collect news articles from these sources:
+                    br
+                    .well
+                        .row.centered
+                            .col-sm-3
+                                h3
+                                    strong New York Times - Real Estate
+                            .col-sm-3
+                                h3
+                                    strong The Real Deal - New York
+                            .col-sm-3
+                                h3
+                                    strong Curbed - New York
+                            .col-sm-3
+                                h3
+                                    strong Crain's New York - Business
+                            .col-sm-3
+                                h3
+                                    strong DNAinfo.com - Real Estate
+                            .col-sm-3
+                                h3
+                                    strong Real Estate Weekly
+                            .col-sm-3
+                                h3
+                                    strong New York Post - Real Estate
+                            .col-sm-3
+                                h3
+                                    strong Inman - Real Estate 
+                    .row.centered
+                        h1.centered How does it work? 
+                        h3.centered Subscribe and we'll send real estate news to your inbox daily.
+                        br
+                        div.btn.btn-primary.btn-lg(data-toggle="modal" data-target="#myModal") Subscribe
+                        br
+            
+                // / .container
+            // / #intro
+        br
+        
+        
+        
+        // Modal
+        #myModal.modal.fade(role='dialog')
+            .modal-dialog
+                // Modal content
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal') ×
+                        h4.modal-title Subscribe to Real Estate News
+                    .modal-body
+                        form
+                            .form-group
+                                label(for='exampleInputEmail1') Enter Your Email Address
+                                br
+                                br
+                                input#exampleInputEmail1.form-control(type='email', aria-describedby='email', placeholder='someone@somewhere.com')
+                                br
+                                strong.small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+    
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Close
+                        button.btn.btn-success(type='button', data-dismiss='modal') Subscribe
+                        
+        style.
+            .tooltip {
+            border-bottom: 0px;
+            }
+        
+
+
+
+
+        
+        
+        section#showcase(name='showcase')
+            #showcase
+                .container.text-center
+                    .col-lg-12
+                        h1.centered Have a suggested news source you don't see here? Contact Chris at 
+                            a(href="mailto:criewaldt@gmail.com?Subject=RENews%20Suggestion") criewaldt@gmail.com 
+                    br
+                // /container
+                
+        section#contact(name='contact')
+        #footerwrap
+            .container
+                .row.text-center
+                    .col-lg-6
+                        h3 Made with:
+                        p Node/Express on Heroku
+                            br
+                            | AWS: Lambda, DynamoDB, CloudWatch
+                    .col-lg-6
+                        h3 Made by:
+                        p
+                            a(href='http://www.chrisriewaldt.com') Chris Riewaldt
+
+
+        script(src='js/bootstrap.js')
+        script.
+            $('.carousel').carousel({
+            interval: 3500
+            })
