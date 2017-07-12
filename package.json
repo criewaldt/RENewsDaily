@@ -1,14 +1,14 @@
 {
-  "name": "ICanHasHelp",
+  "name": "RENews Daily",
   "version": "1.0.0",
-  "description": "Find out if you're eligible for help from various programs and sources.",
+  "description": "",
   "main": " app.js",
   "scripts": {
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/criewaldt/icanhashelp.git"
+    "url": "https://github.com/criewaldt/RENewsDaily.git"
   },
   "keywords": [
     "Node",
@@ -23,7 +23,7 @@
   "author": "Chris Riewaldt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/criewaldt/icanhashelp/issues"
+    "url": "https://github.com/criewaldt/RENewsDaily/issues"
   },
   "homepage": "",
   "dependencies": {
@@ -32,7 +32,6 @@
     "express": "^4.15.3",
     "nodemailer": "^4.0.1",
     "pug": "^2.0.0-rc.2",
-    "request": "^2.81.0",
-    "sequelize": "^4.2.1"
+    "request": "^2.81.0"
   }
 }
