@@ -5,7 +5,7 @@ try {
     var config = require('../local/config.js');
 } catch (err) {
     console.log(err);
-    var config = {};
+    var config = {gmail:{username:"", password: ""}};
 }
 
 function confirmEmail(email) {
