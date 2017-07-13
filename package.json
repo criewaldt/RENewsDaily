@@ -27,7 +27,7 @@
   },
   "homepage": "",
   "dependencies": {
-    "aws-sdk": "^2.82.0",
+    "aws-sdk": "^2.83.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "nodemailer": "^4.0.1",
