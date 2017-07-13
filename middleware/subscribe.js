@@ -5,7 +5,7 @@ var AWS = require('aws-sdk');
 try {
     AWS.config.loadFromPath('./local/aws.json');
 } catch (err) {
-      AWS.config({
+      AWS.config.update({
       "accessKeyId": process.env.AWSID,
       "secretAccessKey": process.env.AWSKEY,
       "region": "us-east-1"
