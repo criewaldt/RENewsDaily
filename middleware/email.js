@@ -26,7 +26,7 @@ function confirmEmail(email) {
         to: email, // list of receivers
         subject: 'Confirm your subscription to R.E. News Daily', // Subject line
         text: 'Hello, if you are seeing this, your email does not allow HTML and R.E. News Daily cannot send you articles. Sorry! :(', // plain text body
-        html: '<p>Hello,</p><p>Confirm your subscription to R.E. News Daily by clicking this link: <a href="{}">Subscribe</a></p>\n\n<p>R.E. News Daily</p>'.replace("{}", "https://renewsdail.herokuapp.com/subscribe/{}".replace("{}", email)) // html body
+        html: '<p>Hello,</p><p>Confirm your subscription to R.E. News Daily by clicking this link: <a href="{}">Subscribe</a></p>\n\n<p>R.E. News Daily</p>'.replace("{}", "https://renewsdaily.herokuapp.com/subscribe/{}".replace("{}", email)) // html body
     };
     
     // send mail with defined transport object
