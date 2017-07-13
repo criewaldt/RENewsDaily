@@ -1,5 +1,17 @@
 var AWS = require('aws-sdk');
-AWS.config.loadFromPath('./local/aws.json');
+
+
+
+try {
+    AWS.config.loadFromPath('./local/aws.json');
+} catch (err) {
+      AWS.config({
+      "accessKeyId": process.env.AWSID,
+      "secretAccessKey": process.env.AWSKEY,
+      "region": "us-east-1"
+      });
+}
+
 var dynamodb = new AWS.DynamoDB();
 
 

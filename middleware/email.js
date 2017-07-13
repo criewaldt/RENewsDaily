@@ -15,8 +15,8 @@ function confirmEmail(email) {
         port: 465,
         secure: true, // secure:true for port 465, secure:false for port 587
         auth: {
-            user: config.gmail.username,
-            pass: config.gmail.password
+            user: config.gmail.username || process.env.GMAILUSER,
+            pass: config.gmail.password || process.env.GMAILPW
         }
     });
     
