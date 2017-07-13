@@ -19,11 +19,12 @@ router.get('/', function(req, res) {
 
 router.post('/subscribe', function(req, res) {
     confirmEmail(req.body.email);
+    res.end();
 });
 
 router.get('/subscribe/:email', function(req, res) {
     addSubscriber(req.params.email);
-    res.send('Success!');
+    res.render('index');
 });
 
 // 404 for any page that doesnt exist - This goes after all other views

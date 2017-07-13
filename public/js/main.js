@@ -9,7 +9,11 @@ function form_submit() {
             url: '/subscribe',
             data: data,
             success: function(result) {
+                console.log(result);
                 alert("We've send you an email. Click the link to confirm your subscription.");
+            },
+            error: function(msg) {
+                console.log(msg);
             }
         });
     }
