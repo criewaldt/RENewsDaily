@@ -91,9 +91,7 @@ html(lang='en')
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li.active
-                            a.smothscroll(href='#home') News Sources
-                        li
-                            a.smothscroll(href="" data-toggle="modal" data-target="#myModal") Subscribe
+                            a.smothscroll(href='/') Go Home
                             
                             
                 // /.nav-collapse
@@ -115,75 +113,11 @@ html(lang='en')
             // INTRO WRAP
             #intro
                 .container
-                    h1.centered We collect relevant news articles from these sources
+                    h1.centered Success! You are now subscribed.
                     br
-                    .well
-                        .row.centered
-                            .col-sm-3
-                                h3
-                                    strong New York Times
-                            .col-sm-3
-                                h3
-                                    strong The Real Deal
-                            .col-sm-3
-                                h3
-                                    strong Curbed NY
-                            .col-sm-3
-                                h3
-                                    strong Crain's New York - Business
-                            .col-sm-3
-                                h3
-                                    strong DNAinfo.com
-                            .col-sm-3
-                                h3
-                                    strong Real Estate Weekly
-                            .col-sm-3
-                                h3
-                                    strong New York Post - Real Estate
-                            .col-sm-3
-                                h3
-                                    strong Inman - Real Estate 
-                    .row.centered
-                        h1.centered Subscribe and we'll send real estate news to your inbox daily.
-                        br
-                        div.btn.btn-primary.btn-lg(data-toggle="modal" data-target="#myModal") Subscribe
-                        br
-            
-                // / .container
-            // / #intro
-        br
-        
-        
-        
-        // Modal 1
-        #myModal.modal.fade(role='dialog')
-            
-            .modal-dialog
-                // Modal content
-                form(id="subscribe" method="POST" action="/subscribe")
-                    .modal-content
-                    
-                        .modal-header
-                            button.close(type='button', data-dismiss='modal') ×
-                            h4.modal-title Subscribe to R.E. News Daily
-                        .modal-body
-                        
-                            .form-group
-                                label(for='exampleInputEmail1') Enter Your Email Address
-                                br
-                                br
-                                input.form-control(id='email', type='email', aria-describedby='email', placeholder='someone@somewhere.com')
-                                br
-                                strong.small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
-        
-                        .modal-footer
-                            button.btn.btn-default(type='button', data-dismiss='modal') Close
-                            a.btn.btn-success(data-dismiss='modal', onclick="form_submit();") Subscribe
-                    
-        style.
-            .tooltip {
-            border-bottom: 0px;
-            }
+                    br
+                    br
+
 
 
 
@@ -214,7 +148,7 @@ html(lang='en')
                         p
                             a(href='http://www.chrisriewaldt.com') Chris Riewaldt
 
-        script(src="js/main.js")
+
         script(src='js/bootstrap.js')
         script.
             $('.carousel').carousel({
