@@ -155,7 +155,7 @@ html(lang='en')
         
         
         
-        // Modal
+        // Modal 1
         #myModal.modal.fade(role='dialog')
             
             .modal-dialog
@@ -165,29 +165,26 @@ html(lang='en')
                     
                         .modal-header
                             button.close(type='button', data-dismiss='modal') ×
-                            h4.modal-title Subscribe to Real Estate News
+                            h4.modal-title Subscribe to R.E. News Daily
                         .modal-body
                         
                             .form-group
                                 label(for='exampleInputEmail1') Enter Your Email Address
                                 br
                                 br
-                                input.form-control(name='email', type='email', aria-describedby='email', placeholder='someone@somewhere.com')
+                                input.form-control(id='email', type='email', aria-describedby='email', placeholder='someone@somewhere.com')
                                 br
                                 strong.small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
         
                         .modal-footer
                             button.btn.btn-default(type='button', data-dismiss='modal') Close
-                            button.btn.btn-success(type='button', data-dismiss='modal' onclick="form_submit()") Subscribe
-                        
+                            a.btn.btn-success(data-dismiss='modal', onclick="form_submit();") Subscribe
+                    
         style.
             .tooltip {
             border-bottom: 0px;
             }
-        script(type='text/javascript').
-            function form_submit() {
-            document.getElementById("subscribe").submit();
-            }
+
 
 
 
@@ -217,7 +214,7 @@ html(lang='en')
                         p
                             a(href='http://www.chrisriewaldt.com') Chris Riewaldt
 
-
+        script(src="js/main.js")
         script(src='js/bootstrap.js')
         script.
             $('.carousel').carousel({

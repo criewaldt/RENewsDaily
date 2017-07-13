@@ -1,6 +1,7 @@
 var express = require('express'),
   router = express.Router(),
-  feed = require('../rss/feed.js');
+  confirmEmail = require('../middleware/email.js'),
+  addSubscriber = require('../middleware/subscribe.js');
   
 try {
     var config = require('../local/config.js');
@@ -16,9 +17,13 @@ router.get('/', function(req, res) {
     res.render('index');
 });
 
-
 router.post('/subscribe', function(req, res) {
-    res.send(req.body.email);
+    confirmEmail(req.body.email);
+});
+
+router.get('/subscribe/:email', function(req, res) {
+    addSubscriber(req.params.email);
+    res.send('Success!');
 });
 
 // 404 for any page that doesnt exist - This goes after all other views

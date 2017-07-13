@@ -1,15 +1,16 @@
-//main.js
-$(document).ready(function() {
-    
-    
-    //tooltip
-    $('[data-toggle="tooltip"]').tooltip();   
-    
-    //click to show/hide articles in following div tag
-    $("#slide").click(function(){
-        //alert(this.innerHTML);
-        $(this).next().slideToggle();
-    });
-
-});
-
+function form_submit() {
+    var data = {
+        email: document.getElementById("email").value
+        };
+    var r = confirm(data.email+": Are you sure you want to subscribe?");
+    if (r === true) {
+        $.ajax({
+            type: "POST",
+            url: '/subscribe',
+            data: data,
+            success: function(result) {
+                alert("We've send you an email. Click the link to confirm your subscription.");
+            }
+        });
+    }
+}
